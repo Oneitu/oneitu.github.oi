@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    <!-- Add this right after your charset meta tag -->
+    <style id="initialThemeStyle">
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --gray-light: #ffffff;
+        }
+        html {
+            visibility: hidden;
+        }
+        html[data-theme="dark"] {
+            --primary-color: #6a8cff;
+            --secondary-color: #5a7ce6;
+            --dark-color: #f0f2f5;
+            --light-color: #1a1d23;
+            --gray-color: #a0a4ab;
+            --gray-light: #2d313a;
+            background-color: #12161f;
+        }
+    </style>
+    <style id="initial-styles">
+    /* Prevent FOUC (Flash of Unstyled Content) */
+    html:not([data-theme]) {
+        visibility: hidden;
+    }
+    
+    /* Initial sidebar styles - must match your default theme */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        background: #ffffff;
+        transform: translateX(0);
+        transition: none !important;
+        z-index: 100;
+    }
+    
+    /* Dark mode initial state */
+    html[data-theme="dark"] .sidebar {
+        background: #1a1d23;
+    }
+    </style>
+    <style>
+  /* Initial background to prevent flash */
+  .main-content {
+    background: linear-gradient(
+      90deg,
+      rgba(237, 247, 255, 1) 0%,
+      rgba(199, 236, 255, 1) 38%,
+      rgba(227, 244, 255, 1) 100%
+    );
+  }
+  
+  [data-theme="dark"] .main-content {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 23, 51, 1) 0%,
+      rgba(0, 44, 102, 1) 38%,
+      rgba(2, 23, 56, 1) 100%
+    );
+  }
+</style>
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS1 - LMS Instructor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <center>
+                    <div class="avatar">
+                        <img src="/img/IMG_20250805_185333.png" alt="Light Mode Avatar" class="avatar-light">
+                        <img src="/img/darkmode logo.png" alt="Dark Mode Avatar" class="avatar-dark">
+                    </div>
+                    </center>
+                </div>
+                <div class="text">
+                    Instructor Dashboard
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.php">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-book-open"></i>
+                            <span>Add Class Courses</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courses.php">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Class Courses</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-tasks"></i>
+                            <span>Virtual Class</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Gradebook</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+               <div class="sidebar-footer">
+                     <ul>
+                    <li class="nav-item">
+                        <a href="/login/index.php">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Leave</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+      
